@@ -22,3 +22,19 @@ while(True):
     f = inf.readline()
     if(len(f) != 0): print(f)
     else: break
+    
+# 정답 코드.
+# input code는 EOFError를 발생시킴
+import sys
+
+while True:
+    line = input()
+    if not line: break
+    print(line)
+
+while(True):
+    try:
+        print(input())
+    except EOFError:
+        break
+
