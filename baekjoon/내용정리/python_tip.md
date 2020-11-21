@@ -42,3 +42,19 @@ for i in range(N):
 int(10진법변환할 수, 기존 진법)
 int(100, 8) 100(8)을 10진법으로 변환
 ~~~
+
+### 문자열 거꾸로 뒤집기
+~~~
+array[::-1]
+~~~
+
+### 알고리즘 시간 복잡도
+- 배열 기반의 리스트의 중간에 끼워넣거나, 빼는 것은 O(N)
+- 퀵소트를 구현하면 거의 O(N^2)이 될 확률이 높음. 왠만하면 내장 정렬 함수를 사용하자
+- 격자에서 탐색할 때 반드시 범위 체크를 하자
+- DP를 할때는 반드시 memorization 필수.
+- BFS에서는 큐에서 뺀 다음이 아닌, 큐에서 빼기 전에 방문 체크를 해야 중복 방문이 일어나지 않음
+- list.pop(0), list.index, list.insert, list.count, x in list, list[:-1] 등은 다 O(N). 이외에도 O(N)이 걸리는 list 연산이 굉장히 많음.
+- list를 큐 또는 덱으로 사용하면 안됨 반드시 collections.deque를 써야 함
+- <b/>파이썬의 재귀 깊이는 최대 1000</b>, sys.setrecursionlimit으로 이 깊이를 조절할 수 있음
+  - 삼성 코테에서는 sys.setrecursionlimit은 사용할 수 없음 
