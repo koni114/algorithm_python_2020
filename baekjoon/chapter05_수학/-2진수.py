@@ -18,3 +18,30 @@
 
 # 예제 출력
 # 110111
+import sys
+from collections import deque
+d = deque()
+f = sys.stdin
+N = int(f.readline().strip())
+if N == 0: print(0)
+else:
+    while(True):
+        if abs(N) <= 1:
+            if N == -1:
+                d.extendleft([1,1])
+            elif N == 1:
+                d.appendleft(1)
+            break
+        a, b = divmod(N, -2)
+        if b == 0:
+            d.appendleft(b)
+            N = a
+        else:
+            d.appendleft(b+2)
+            N = a+1
+
+    for i in range(len(d)):
+        if i == len(d)-1:
+            print(str(d[i]))
+        else:
+            print(str(d[i]), end = "")

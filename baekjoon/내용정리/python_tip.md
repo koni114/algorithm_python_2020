@@ -58,3 +58,12 @@ array[::-1]
 - list를 큐 또는 덱으로 사용하면 안됨 반드시 collections.deque를 써야 함
 - <b/>파이썬의 재귀 깊이는 최대 1000</b>, sys.setrecursionlimit으로 이 깊이를 조절할 수 있음
   - 삼성 코테에서는 sys.setrecursionlimit은 사용할 수 없음 
+
+
+### 습관 들이기
+- 최소, 최대, 0, 1은 반드시 예외 처리 등이 되어 있는지 확인해보기
+
+### 반올림, 올림, 버림
+- round function : 반올림
+- int function : 버림
+- ceil function : 올림
