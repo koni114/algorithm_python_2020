@@ -50,21 +50,9 @@ def insertSort(arr):
 insertSort([3,5,1,2,4])
 insertSort([2,2,1])
 
-## 파이썬 정렬 함수
-# 1차원 배열 정렬
-test = [5,1,4,3,2]
-test.sort()                #- 오름차순 정렬
-test.sort(reverse = True)  #- 내림차순 정렬
 
-# 2차원 배열 정렬
-test = [
-    [1, 1],
-    [5, 3],
-    [2, 2],
-    [2, 3],
-    [5, 3]
-]
-sorted(test, key=lambda x: x[1])
-# 아이템 첫 번째 인자를 기준으로 오름차순으로 먼저 정렬하고,
-# 그리고 그 안에서 다음 두 번째 인자를 기준으로 내림차순으로 정렬하게 하려면, 다음과 같이 할 수 있다.
-sorted(test, key=lambda x: (x[0], -x[1]))
+
+
+
+
+
