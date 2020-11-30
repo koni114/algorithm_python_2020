@@ -36,3 +36,28 @@
 
 # 출력 예제 1
 # 75
+
+import sys
+from collections import deque
+d = deque()
+f = sys.stdin
+N = int(f.readline().strip())
+for _ in range(N):
+    d.append(int(f.readline().strip()))
+arr = list(d)
+dp = [[0, 0] for i in range(N)]
+if N == 1:
+    print(arr[0])
+elif N == 2:
+    print(sum(arr))
+else:
+    dp[0][0] = arr[0]
+    dp[0][1] = arr[0]
+    dp[1][0] = arr[1]
+    dp[1][1] = arr[0] + arr[1]
+    for i in range(2, N):
+        dp[i][0] = arr[i] + max(dp[i-2])
+        dp[i][1] = arr[i] + dp[i-1][0]
+    print(max(dp[N-1]))
+
+
