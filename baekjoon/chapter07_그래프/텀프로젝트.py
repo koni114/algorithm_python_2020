@@ -22,3 +22,43 @@
 # 각 테스트 케이스의 첫 줄에는 학생의 수가 정수 n (2 ≤ n ≤ 100,000)으로 주어진다.
 # 각 테스트 케이스의 둘째 줄에는 선택된 학생들의 번호가 주어진다. (모든 학생들은 1부터 n까지 번호가 부여된다.)
 
+import sys
+from collections import deque
+f = sys.stdin
+T = int(f.readline().strip())
+def bfs(x):
+    d = deque()
+    d2 = deque()
+    unTeam = 0
+    check2[x] = 1
+    d.append([x,1])
+    d2.append(x)
+    while(len(d) != 0):
+        x, c = d.pop()
+        nx = arr[x]
+        if check1[nx] == 0 and check2[nx] == 0:
+            check2[nx] = c+1
+            d.append([nx, c+1])
+            d2.append(nx)
+        elif check1[nx] == 0 and check2[nx] != 0:
+            unTeam = check2[nx] - 1
+            d2.append(nx)
+        elif check1[nx] == 1:
+            unTeam = c
+
+    while(len(d2) != 0):
+        check1[d2.pop()] = 1
+
+    return unTeam
+
+for _ in range(T):
+    N = int(f.readline().strip())
+    arr = [0]
+    arr.extend(list(map(int, f.readline().strip().split(" "))))
+    check1 = [0 for _ in range(N+1)]
+    check2 = [0 for _ in range(N+1)]
+    unTeamValue = 0
+    for i in range(1, N+1):
+        if check1[i] == 0:
+            unTeamValue += bfs(i)
+    print(unTeamValue)
