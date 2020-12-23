@@ -35,7 +35,7 @@ for i in range(N):
 
 ### 기타 조심할 사항
 - while 문을 사용할 때, 반드시 먼저 check하고 본문을 수행하자  
-  아니면 예외를 잡기 어려울 수 있
+  아니면 예외를 잡기 어려울 수 있음
   
 ### 파이썬에서 10진법으로 변환 쉽게 하는 방법
 ~~~
@@ -55,7 +55,7 @@ array[::-1]
 - DP를 할때는 반드시 memorization 필수.
 - BFS에서는 큐에서 뺀 다음이 아닌, 큐에서 빼기 전에 방문 체크를 해야 중복 방문이 일어나지 않음
 - list.pop(0), list.index, list.insert, list.count, x in list, list[:-1] 등은 다 O(N). 이외에도 O(N)이 걸리는 list 연산이 굉장히 많음.
-- list를 큐 또는 덱으로 사용하면 안됨 반드시 collections.deque를 써야 함
+- list를 큐 또는 덱으로 사용하면 안됨. 반드시 collections.deque를 써야 함
 - <b/>파이썬의 재귀 깊이는 최대 1000</b>, sys.setrecursionlimit으로 이 깊이를 조절할 수 있음
   - 삼성 코테에서는 sys.setrecursionlimit은 사용할 수 없음 
 
@@ -82,4 +82,3 @@ array[::-1]
 ### 그래프 - 토마토 문제
 - 처음 도마도의 위치를 queue에 전부 넣고 시작하고 기존의 BFS 방식과 동일하게 수행
 - 항상 그래프에서 dfs는 stack, bfs는 queue임을 명심하고 문제에 접근하자
-
